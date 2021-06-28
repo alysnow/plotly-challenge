@@ -113,6 +113,8 @@ Created a guage chart to display the weekly belly button washing frequency of an
 
 Below is an overview of the Belly Button Diversity Dashboard which contains all the interactive charts which explores the dataset.
 
+The Dashboard can be accessed at the following [link] (https://alysnow.github.io/plotly-challenge/).
+
 ![dashboard.PNG](images/dashboard.PNG)
 
 

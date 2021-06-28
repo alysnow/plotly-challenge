@@ -6,19 +6,12 @@ function buildPlots(subject) {
 // Grab values from the data samples.json object to build the plots
 // ----------------------------------------------
         var metadata = data.metadata.filter(m => m.id.toString() === subject)[0];
-        console.log(metadata);
         var wfreq = metadata.wfreq;
-        console.log(wfreq);
         var samples = data.samples.filter(s => s.id.toString() === subject)[0];
-        console.log(samples);
         var sampleData = samples.sample_values.slice(0, 10).reverse();
-        console.log(sampleData);
         var otuData = (samples.otu_ids.slice(0, 10)).reverse();
-        console.log(otuData);
         var otuID = otuData.map(d => `OTU ${d}`);
-        console.log(otuID);
         var labels = samples.otu_labels.slice(0, 10);
-        console.log(labels);
 
 // Create Bar Chart
 // ----------------------------------------------
@@ -33,10 +26,7 @@ function buildPlots(subject) {
             orientation: "h",
         };
 
-        console.log(traceBarChart);
-
         var dataBarChart = [traceBarChart];
-        console.log(dataBarChart);
 
         var layoutBarChart = {
             title: "<b>Top 10 OTU Per Subject</b>",
@@ -66,8 +56,6 @@ function buildPlots(subject) {
             },
             text: samples.otu_labels
         };
-
-        console.log(traceBubbleChart);
 
         var layoutBubbleChart = {
             xaxis: {
@@ -115,8 +103,6 @@ function buildPlots(subject) {
             }
         }];
 
-        console.log(traceGaugeChart);
-
         var layoutGaugeChart = {
             width: 600,
             height: 500,
@@ -139,14 +125,9 @@ function buildPlots(subject) {
 function getDemographicInfo(subject) {
     d3.json("data/samples.json").then((data) => {
 
-        console.log(subject);
-
         var metadata = data.metadata;
-        console.log(metadata);
         var demographicData = metadata.filter(m => m.id.toString() === subject)[0];
-        console.log(demographicData);
         var metadataField = d3.select("#sample-metadata");
-        console.log(metadataField);
 
         metadataField.html("");
 
